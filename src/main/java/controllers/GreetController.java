@@ -1,5 +1,6 @@
 package controllers;
 
+import java.awt.*;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -8,6 +9,7 @@ import java.util.List;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import domain.Car;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class GreetController {
 
-    @RequestMapping(value = "/getString", method = RequestMethod.GET, produces = "application/json")
+    @RequestMapping(value = "/getString", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public String asd(){
         Car car = new Car();
         car.setId("dsafs");
