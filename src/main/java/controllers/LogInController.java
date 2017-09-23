@@ -27,6 +27,7 @@ public class LogInController {
     public ResponseEntity<User> logIn(@RequestBody User user){
 
         if(authentificationService.authentificateUser(user)){
+
             return new ResponseEntity<User>(user ,HttpStatus.OK);
         }else {
             return new ResponseEntity<User>(user ,HttpStatus.NOT_FOUND);
