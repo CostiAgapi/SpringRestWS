@@ -4,8 +4,6 @@ import static java.util.Collections.emptyList;
 import static security.SecurityConstants.PASSWORD;
 import static security.SecurityConstants.USERNAME;
 
-import dao.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -18,8 +16,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
 
-    @Autowired
-    private UserRepository userRepository;
+//    @Autowired
+//    private UserRepository userRepository;
 
 //    public UserDetailsServiceImpl(UserRepository userRepository) {
 //        this.userRepository = userRepository;

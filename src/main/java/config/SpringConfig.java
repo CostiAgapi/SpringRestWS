@@ -11,7 +11,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
  */
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = {"config","controllers","dao","services","security"})
+@ComponentScan(basePackages = {"config","controllers","dao","services","security","datasource"})
 public class SpringConfig {
 
     @Bean
