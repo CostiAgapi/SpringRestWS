@@ -1,5 +1,6 @@
 package dao;
 
+import domain.User;
 import org.hibernate.SessionFactory;
 
 /**
@@ -7,5 +8,5 @@ import org.hibernate.SessionFactory;
  */
 public interface UserDAO {
 
-    public void create();
+    public void create(User user);
 }

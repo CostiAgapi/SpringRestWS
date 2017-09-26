@@ -1,20 +1,26 @@
 package domain;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
+
 
 /**
  * Created by ConstantinAgapi on 22/09/2017.
  */
 @Entity
+@Table(name="Users")
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id")
     private long id;
+    @Column(name="username")
     private String username;
+    @Column(name="password")
     private String password;
 
     public long getId() {

@@ -40,7 +40,7 @@ public class UserController {
     @RequestMapping(value="/sign-up", method = RequestMethod.POST)
     @ResponseStatus(value = HttpStatus.OK)
     public void signUp(@RequestBody User user) {
-        userRepository.create();
+        userRepository.create(user);
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         USERNAME = user.getUsername();
         PASSWORD = user.getPassword();

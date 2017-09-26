@@ -1,5 +1,6 @@
 package dao;
 
+import domain.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ public class UserDAOImpl implements UserDAO{
     private SessionFactory sessionFactory;
 
     @Override
-    public void create() {
-        Session session=sessionFactory.getCurrentSession();
+    public void create(User user) {
+        sessionFactory.getCurrentSession().save(user);
     }
 }
