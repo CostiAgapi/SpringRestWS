@@ -9,4 +9,9 @@ import org.hibernate.SessionFactory;
 public interface UserDAO {
 
     public void create(User user);
+
+    public User getUserByUsername (String username);
+
+    public User getUserByEmail(String email);
+
 }

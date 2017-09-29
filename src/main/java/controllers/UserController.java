@@ -1,7 +1,5 @@
 package controllers;
 
-import static security.SecurityConstants.PASSWORD;
-import static security.SecurityConstants.USERNAME;
 
 import dao.UserDAO;
 import domain.User;
@@ -40,11 +38,9 @@ public class UserController {
     @RequestMapping(value="/sign-up", method = RequestMethod.POST)
     @ResponseStatus(value = HttpStatus.OK)
     public void signUp(@RequestBody User user) {
-        userRepository.create(user);
+
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-        USERNAME = user.getUsername();
-        PASSWORD = user.getPassword();
-        System.out.println(USERNAME+PASSWORD);
+        userRepository.create(user);
     }
 
     //TODO decide implementation for logout (client side or put jwt token in cookie not in header)

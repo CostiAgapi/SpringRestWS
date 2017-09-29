@@ -2,8 +2,6 @@ package domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -22,6 +20,20 @@ public class User {
     private String username;
     @Column(name="password")
     private String password;
+    @Column(name="email")
+    private String email;
+
+    public void setId(final long id) {
+        this.id = id;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(final String email) {
+        this.email = email;
+    }
 
     public long getId() {
         return id;
