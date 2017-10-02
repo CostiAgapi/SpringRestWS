@@ -29,16 +29,11 @@ public class UserController {
     @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
-//    public UserController(UserRepository userRepository,
-//            BCryptPasswordEncoder bCryptPasswordEncoder) {
-//        this.userRepository = userRepository;
-//        this.bCryptPasswordEncoder = bCryptPasswordEncoder;
-//    }
-
     @RequestMapping(value="/sign-up", method = RequestMethod.POST)
     @ResponseStatus(value = HttpStatus.OK)
     public void signUp(@RequestBody User user) {
-
+//        userRepository.get
+//        if()
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         userRepository.create(user);
     }
