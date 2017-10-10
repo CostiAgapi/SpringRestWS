@@ -1,9 +1,7 @@
 package controllers;
 
-import java.awt.*;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class GreetController {
 
-    @RequestMapping(value = "/api/getString", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @RequestMapping(value = "/getString", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public String asd(){
         Car car = new Car();
         car.setId("dsafs");
