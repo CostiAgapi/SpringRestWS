@@ -1,6 +1,9 @@
 package controllers;
 
 
+import java.io.IOException;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
 import dao.UserDAO;
 import domain.User;
 import org.hibernate.SessionFactory;
@@ -31,9 +34,16 @@ public class UserController {
 
     @RequestMapping(value="/sign-up", method = RequestMethod.POST)
     @ResponseStatus(value = HttpStatus.OK)
-    public void signUp(@RequestBody User user) {
+    public void signUp(@RequestBody String userJson) {
 //        userRepository.get
 //        if()
+        ObjectMapper mapper = new ObjectMapper();
+        User user = null;
+        try {
+            user = mapper.readValue(userJson, User.class);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         userRepository.create(user);
     }
