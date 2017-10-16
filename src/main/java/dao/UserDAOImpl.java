@@ -1,11 +1,7 @@
 package dao;
 
-import java.util.List;
-
 import domain.User;
-import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -33,6 +29,7 @@ public class UserDAOImpl implements UserDAO{
 
     @Override
     public User getUserByEmail(final String email) {
-        return null;
+        User user = (User)sessionFactory.getCurrentSession().createQuery("from User as c where c.email = :email").setParameter("email",email).uniqueResult();
+        return user;
     }
 }

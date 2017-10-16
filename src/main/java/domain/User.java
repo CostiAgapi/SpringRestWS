@@ -22,6 +22,27 @@ public class User {
     private String password;
     @Column(name="email")
     private String email;
+    @Column(name="firstName")
+    private String firstName;
+    @Column(name="lastName")
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(final String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(final String lastName) {
+        this.lastName = lastName;
+    }
+
+    private String lastName;
 
     public void setId(final long id) {
         this.id = id;
