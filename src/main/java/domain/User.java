@@ -12,8 +12,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name="Users")
 public class User {
-  @Id
-  private String aasd;
+
     @Id
     @Column(name="id")
     private long id;
